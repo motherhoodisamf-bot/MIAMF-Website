@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — Motherhood Is A MF</title>
+<link rel="icon" type="image/png" href="assets/logo-mark.png" />
+<link rel="stylesheet" href="assets/brand.css" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+<link id="gfont-Playfair-Display" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&amp;display=swap" />
+<link id="gfont-Montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" />
+<script src="assets/image-slot.js"></script>
+<style>
+/* ===== SHOP — The Editorial (matches site system) ===== */
+.ed-h{font-family:"Fraunces",Georgia,serif;font-weight:400;font-style:normal;line-height:1.04;letter-spacing:-.012em;color:var(--ink)}
+.ed-h em{font-style:italic;color:var(--bordeaux);font-weight:400}
+
+/* NAV */
+header.nav{position:relative;z-index:50;background:var(--cream)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:28px 52px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brandmark{font-family:var(--sc);font-weight:600;letter-spacing:.34em;font-size:16px;color:var(--bordeaux)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a:not(.btn){font-family:var(--sc);letter-spacing:.2em;text-transform:uppercase;font-size:12.5px;color:var(--ink);transition:color .25s}
+.nav-links a:not(.btn):hover,.nav-links a.current{color:var(--bordeaux)}
+@media(max-width:880px){.nav-links{display:none}}
+
+/* SHOP HERO */
+.shop-hero{position:relative;background:var(--cream);text-align:center;padding:108px 0 70px;overflow:hidden}
+.shop-hero .peony{position:absolute;width:300px;opacity:.16;pointer-events:none}
+.shop-hero .peony.l{left:-90px;top:-40px;transform:rotate(-18deg)}
+.shop-hero .peony.r{right:-90px;bottom:-110px;transform:rotate(150deg)}
+.shop-hero .wrap{max-width:900px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+.shop-hero .eyebrow{color:var(--bordeaux);display:block;margin-bottom:22px}
+.shop-hero h1{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(48px,8vw,104px);line-height:.96;letter-spacing:-.02em;color:var(--ink)}
+.shop-hero h1 em{font-style:italic;color:var(--bordeaux)}
+.shop-hero p{font-family:"Montserrat",sans-serif;font-size:18px;line-height:1.7;color:rgba(42,20,20,.74);max-width:54ch;margin:26px auto 0;text-align:center}
+
+/* MARQUEE STRIP */
+.strip{background:var(--bordeaux);color:var(--cream);overflow:hidden;padding:15px 0}
+.strip-track{display:inline-flex;white-space:nowrap;will-change:transform;animation:edmarq 30s linear infinite}
+.strip-track .seg{display:inline-flex;align-items:center;gap:28px;padding-right:28px}
+.strip-track .seg span{font-family:"Playfair Display",serif;font-style:italic;font-size:23px;display:inline-flex;align-items:center;gap:28px}
+.strip-track .seg span::after{content:"✦";font-style:normal;font-size:12px;color:currentColor}
+@keyframes edmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* PRODUCT GRID */
+.shop{background:var(--cream);padding:96px 0 110px}
+.shop .head{max-width:1180px;margin:0 auto 56px;padding:0 52px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.shop .head h2{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(30px,4vw,50px);line-height:1.02;color:var(--ink)}
+.shop .head h2 em{font-style:italic;color:var(--bordeaux)}
+.shop .head .count{font-family:var(--sc);letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:rgba(42,20,20,.5)}
+.grid{max-width:1180px;margin:0 auto;padding:0 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.card .ph{position:relative;width:100%;aspect-ratio:4/5;background:var(--blush);border:1px solid var(--rule);overflow:hidden}
+.card .ph image-slot{width:100%;height:100%}
+.card .tag{position:absolute;top:14px;left:14px;z-index:3;background:var(--bordeaux);color:var(--cream);font-family:var(--sc);letter-spacing:.18em;text-transform:uppercase;font-size:10px;padding:7px 13px}
+.card .meta{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:20px}
+.card h3{font-family:"Playfair Display",serif;font-weight:500;font-size:24px;line-height:1.1;color:var(--ink)}
+.card .price{font-family:"Fraunces",serif;font-style:italic;font-size:21px;color:var(--bordeaux);white-space:nowrap}
+.card .desc{font-family:"Montserrat",sans-serif;font-size:14.5px;line-height:1.55;color:rgba(42,20,20,.68);margin-top:8px}
+.card .buy{margin-top:18px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sc);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:12px;padding:14px 22px;background:transparent;color:var(--bordeaux);border:1px solid var(--bordeaux);border-radius:1px;transition:background .3s,color .3s,transform .3s}
+.card .buy .ar{font-family:var(--body);letter-spacing:0;font-size:16px;transition:transform .3s}
+.card:hover .buy{background:var(--bordeaux);color:var(--cream)}
+.card:hover .buy .ar{transform:translateX(5px)}
+@media(max-width:880px){.grid{grid-template-columns:repeat(2,1fr);gap:34px 24px}.shop .head,.grid{padding-left:26px;padding-right:26px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr;max-width:420px}}
+
+/* NOTE / HOW IT SHIPS */
+.shipnote{background:var(--blush);text-align:center;padding:80px 0}
+.shipnote .wrap{max-width:760px;margin:0 auto;padding:0 32px}
+.shipnote .eyebrow{color:var(--bordeaux);display:block;margin-bottom:18px}
+.shipnote h2{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(26px,3.6vw,40px);line-height:1.1;color:var(--ink)}
+.shipnote h2 em{font-style:italic;color:var(--bordeaux)}
+.shipnote .row{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-top:40px}
+.shipnote .row .it{max-width:200px}
+.shipnote .row .it .n{font-family:"Fraunces",serif;font-style:italic;font-size:34px;color:var(--bordeaux);line-height:1;display:block;margin-bottom:12px}
+.shipnote .row .it p{font-family:"Montserrat",sans-serif;font-size:14.5px;line-height:1.6;color:rgba(42,20,20,.72)}
+
+/* FOOTER */
+footer.ed-foot{background:var(--chocolate);color:var(--cream);padding:80px 0 44px}
+.ed-foot .cols{max-width:1180px;margin:0 auto;padding:0 52px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;align-items:start}
+.ed-foot .brand h3{font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:26px;color:var(--cream);margin-bottom:14px}
+.ed-foot .brand p{font-size:15px;line-height:1.7;color:rgba(251,236,220,.7);max-width:32ch}
+.ed-foot .col h4{font-family:var(--sc);letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:var(--bordeaux-pale);margin-bottom:18px}
+.ed-foot .col a,.ed-foot .col p{display:block;font-size:15px;color:rgba(251,236,220,.82);margin-bottom:11px}
+.ed-foot .col a:hover{color:var(--cream)}
+.ed-foot .base{max-width:1180px;margin:54px auto 0;padding:24px 52px 0;border-top:1px solid rgba(251,236,220,.16);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--sc);letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:rgba(251,236,220,.5)}
+@media(max-width:760px){.ed-foot .cols{grid-template-columns:1fr;gap:34px}.nav-inner{padding:16px 26px}}
+</style>
+</head>
+<body class="ed">
+<div class="grain"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brandmark" aria-label="Motherhood Is A MF — home"><img src="assets/logo-mark.png" alt="Motherhood Is A MF" style="height:80px;width:auto;display:block" /></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+      <a href="index.html#listen">Listen</a>
+      <a href="Advertise.html">Advertise</a>
+      <a href="Contact.html">Contact</a>
+      <a href="index.html#listen" class="btn btn-line">Tune in <span class="ar">→</span></a>
+    </nav>
+    <button class="m-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="m-overlay" aria-hidden="true">
+  <div class="m-orn">✦</div>
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="index.html#listen">Listen</a>
+  <a href="Advertise.html">Advertise</a>
+  <a href="Contact.html">Contact</a>
+  <a href="index.html#listen" class="m-cta">Tune in →</a>
+</nav>
+
+<!-- HERO -->
+<section class="shop-hero" data-screen-label="Shop hero">
+  <img class="peony l" src="assets/flower.png" alt="" />
+  <img class="peony r" src="assets/flower.png" alt="" />
+  <div class="wrap" data-reveal>
+    <span class="eyebrow label">Official Merch Collection</span>
+    <h1>THE MF<em>Market.</em></h1>
+    <p style="text-align: right">Essentials for moms who need a break and the occasional reminder that she&rsquo;s still THAT girl. <br /><br />For the overstimulated. The emotionally exhausted. The soft moms trying their best.</p>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <div class="seg"><span>Bye bye mom guilt</span><span>Moms need villages too</span><span>Bye bye mom guilt</span><span>Moms need villages too</span></div>
+    <div class="seg" aria-hidden="true"><span>Bye bye mom guilt</span><span>Moms need villages too</span><span>Bye bye mom guilt</span><span>Moms need villages too</span></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="shop" data-screen-label="Products">
+  <div class="head" data-reveal>
+    <h2>The <em>Collection</em></h2>
+    <span class="count">Drop 01 · 6 pieces</span>
+  </div>
+  <div class="grid">
+
+    <a class="card" data-reveal href="#" aria-label="Shop the Motherhood Is A MF tee">
+      <div class="ph"><span class="tag">Bestseller</span><image-slot id="shop-prod-1" shape="rect" placeholder="Drop product photo"></image-slot></div>
+      <div class="meta"><h3>The Statement Tee</h3><span class="price">$34</span></div>
+      <p class="desc">Soft, oversized, and says the quiet part out loud. Unisex fit.</p>
+      <span class="buy">Shop now <span class="ar">→</span></span>
+    </a>
+
+    <a class="card" data-reveal data-d="1" href="#" aria-label="Shop the Muva crewneck">
+      <div class="ph"><image-slot id="shop-prod-2" shape="rect" placeholder="Drop product photo"></image-slot></div>
+      <div class="meta"><h3>Muva Crewneck</h3><span class="price">$52</span></div>
+      <p class="desc">The cozy you reach for on the unhinged days. Heavyweight fleece.</p>
+      <span class="buy">Shop now <span class="ar">→</span></span>
+    </a>
+
+    <a class="card" data-reveal data-d="2" href="#" aria-label="Shop the bye bye mom guilt mug">
+      <div class="ph"><span class="tag">New</span><image-slot id="shop-prod-3" shape="rect" placeholder="Drop product photo"></image-slot></div>
+      <div class="meta"><h3>"Bye Bye Mom Guilt" Mug</h3><span class="price">$22</span></div>
+      <p class="desc">For the coffee that's holding it all together. 15oz.</p>
+      <span class="buy">Shop now <span class="ar">→</span></span>
+    </a>
+
+    <a class="card" data-reveal href="#" aria-label="Shop the everyday tote">
+      <div class="ph"><image-slot id="shop-prod-4" shape="rect" placeholder="Drop product photo"></image-slot></div>
+      <div class="meta"><h3>The Everyday Tote</h3><span class="price">$28</span></div>
+      <p class="desc">Snacks, wipes, your whole life — it carries the load so you don't have to.</p>
+      <span class="buy">Shop now <span class="ar">→</span></span>
+    </a>
+
+    <a class="card" data-reveal data-d="1" href="#" aria-label="Shop the safe space hoodie">
+      <div class="ph"><image-slot id="shop-prod-5" shape="rect" placeholder="Drop product photo"></image-slot></div>
+      <div class="meta"><h3>Safe Space Hoodie</h3><span class="price">$58</span></div>
+      <p class="desc">A soft place to land, literally. Embroidered logo, brushed inside.</p>
+      <span class="buy">Shop now <span class="ar">→</span></span>
+    </a>
+
+    <a class="card" data-reveal data-d="2" href="#" aria-label="Shop the sticker pack">
+      <div class="ph"><span class="tag">Under $15</span><image-slot id="shop-prod-6" shape="rect" placeholder="Drop product photo"></image-slot></div>
+      <div class="meta"><h3>Sticker Pack</h3><span class="price">$12</span></div>
+      <p class="desc">For your laptop, water bottle, and the minivan. Set of 5.</p>
+      <span class="buy">Shop now <span class="ar">→</span></span>
+    </a>
+
+  </div>
+</section>
+
+<!-- HOW IT SHIPS -->
+<section class="shipnote" data-screen-label="How it ships">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow label">Good to know</span>
+    <h2>Made to order, <em>shipped with love.</em></h2>
+    <div class="row">
+      <div class="it"><span class="n">01</span><p>Printed on demand — every piece is made fresh when you order it.</p></div>
+      <div class="it"><span class="n">02</span><p>Ships in 3–7 business days. Worldwide, because muvas are everywhere.</p></div>
+      <div class="it"><span class="n">03</span><p>A piece of every order keeps the mic on. Thank you, truly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- NEWSLETTER (Flodesk) -->
+<section class="vip" id="vip" data-screen-label="Newsletter">
+  <img class="flower" src="assets/flower-cream.png" alt="" />
+  <div class="wrap">
+    <div id="fd-form-6a25a0bbd8416e9ee121f855" class="fd-embed"></div>
+  </div>
+</section>
+
+<footer class="ed-foot" data-screen-label="Footer" style="background-color: rgb(119, 19, 18)">
+  <div class="cols">
+    <div class="brand">
+      <h3 style="font-family: &quot;Playfair Display&quot;">Motherhood Is A MF</h3>
+      <p>Unfiltered conversations about motherhood. Hosted by Kei. </p>
+      <img src="assets/logo-mark.png" alt="Motherhood Is A MF" style="height:98px;width:auto;margin-top:20px;display:block;filter:brightness(0) invert(1);opacity:.9" />
+      <div class="foot-social">
+        <a href="https://www.instagram.com/motherhoodisamf/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13-.67-.66-1.34-1.07-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.15A3.99 3.99 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@motherhoodisamf" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.2v12.86a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1-2.59-2.59 2.59 2.59 0 0 1 3.41-2.45V7.62a5.8 5.8 0 0 0-.82-.06A5.79 5.79 0 0 0 4 13.35a5.79 5.79 0 0 0 9.95 4.03 5.78 5.78 0 0 0 1.63-4.03V8.96a7.45 7.45 0 0 0 4.4 1.42V7.18a4.28 4.28 0 0 1-3.38-1.36z"/></svg></a>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="About.html">About Kei</a>
+      <a href="index.html#listen">Where to listen</a>
+      <a href="Advertise.html">Advertise</a>
+      <a href="#vip">Newsletter</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+    <div class="col">
+      <h4>Listen</h4>
+      <a href="https://open.spotify.com/show/033tnxdGR8PjCCrgBkwU6o" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://podcasts.apple.com/us/podcast/motherhood-is-a-mf/id1896886957" target="_blank" rel="noopener">Apple Podcasts</a>
+      <a href="https://www.youtube.com/@MotherhoodIsAMF" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/motherhoodisamf/" target="_blank" rel="noopener">@motherhoodisamf</a>
+    </div>
+  </div>
+  <div class="base">
+    <span>© 2026 Motherhood Is A MF</span>
+    <span>MotherhoodIsAMF.com</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    [].slice.call(document.querySelectorAll('[data-reveal]')).forEach(function(el){io.observe(el);});
+  }else{[].slice.call(document.querySelectorAll('[data-reveal]')).forEach(function(el){el.classList.add('in');});}
+  var mt=document.querySelector('.m-toggle'), mo=document.querySelector('.m-overlay');
+  if(mt&&mo){
+    function setMenu(open){mt.classList.toggle('on',open);mo.classList.toggle('open',open);document.body.classList.toggle('m-lock',open);mt.setAttribute('aria-expanded',open);mo.setAttribute('aria-hidden',!open);mt.setAttribute('aria-label',open?'Close menu':'Open menu');}
+    mt.addEventListener('click',function(){setMenu(!mo.classList.contains('open'));});
+    mo.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';if(href.charAt(0)==='#'){setMenu(false);return;}e.preventDefault();setMenu(false);window.location.href=a.href;});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
+  }
+})();
+</script>
+
+<!-- Flodesk inline newsletter form -->
+<script>
+(function(w,d,t,h,s,n){
+  w.FlodeskObject=n;
+  var fn=function(){(w[n].q=w[n].q||[]).push(arguments);};
+  w[n]=w[n]||fn;
+  var f=d.getElementsByTagName(t)[0];
+  var v='?v='+Math.floor(new Date().getTime()/(120*1000))*60;
+  var sm=d.createElement(t);sm.async=true;sm.type='module';sm.src=h+s+'.mjs'+v;
+  f.parentNode.insertBefore(sm,f);
+  var sn=d.createElement(t);sn.async=true;sn.noModule=true;sn.src=h+s+'.js'+v;
+  f.parentNode.insertBefore(sn,f);
+})(window,document,'script','https://assets.flodesk.com','/universal','fd');
+window.fd('form',{
+  formId:'6a25a0bbd8416e9ee121f855',
+  containerEl:'#fd-form-6a25a0bbd8416e9ee121f855'
+});
+window.fd('form',{
+  formId:'6a28cfd1c94aa75ad67dfd65'
+});
+</script>
+</body>
+</html>

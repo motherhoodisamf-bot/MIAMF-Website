@@ -1,0 +1,110 @@
+/* ===========================================================
+   MOTHERHOOD IS A MOTHERFUCKA — shared brand system
+   Editorial luxury. Cormorant + EB Garamond. Cream & Bordeaux.
+   =========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+:root{
+  --cream:#FBECDC;
+  --cream-d:#EDE6D6;
+  /* Scarlet Letter palette */
+  --bordeaux:#DC2626;     /* SCARLET — primary */
+  --bordeaux-l:#B01020;   /* CRIMSON — hover / deeper accent */
+  --bordeaux-pale:#F87171;/* CORAL — ornamental / peony pale */
+  --wine:#5C0A10;
+  --cherry:#B01020;
+  --chocolate:#40070C;    /* deepest */
+  --blush:#FEE2E2;
+  --ink:#2A1414;
+  --gold:#C9A96E;
+  --rule:rgba(42,20,20,.16);
+  --rule-cream:rgba(251,236,220,.26);
+  --display:"Jost",system-ui,sans-serif;
+  --sc:"Jost",system-ui,sans-serif;
+  --body:"Jost",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:var(--body);font-size:19px;line-height:1.8;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--bordeaux);color:var(--cream)}
+
+/* ---- grain overlay ---- */
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* ---- type helpers ---- */
+.display{font-family:var(--display);font-weight:500;font-style:normal;line-height:1.08;letter-spacing:-.005em}
+.label{font-family:var(--sc);font-weight:500;letter-spacing:.3em;text-transform:uppercase;font-size:12px;line-height:1.4}
+.serif-up{font-family:var(--display);font-weight:500;font-style:normal}
+em.accent{color:var(--bordeaux);font-style:normal;font-weight:500}
+
+/* ---- Jost (Futura-style geometric, à la Glacial Indifference) ---- */
+.hero-sub,.about-body .lead,.intro p,.card p,.mutha p,.news p,
+.listen .lhead p,.news input{font-style:normal !important}
+.display,.hero-tag,.tr,blockquote,.pname,.lcard h3,.lrow h3,.intro h1,.card h2,
+.about h2 em,.tr em,.display em{font-weight:500 !important;font-style:normal !important}
+
+/* ---- ornamental rules / dividers ---- */
+.hr-orn{height:1px;border:none;background:linear-gradient(90deg,transparent,var(--bordeaux-pale),transparent)}
+.hr-orn.cream{background:linear-gradient(90deg,transparent,rgba(251,236,220,.5),transparent)}
+.divider{display:flex;align-items:center;justify-content:center;gap:18px;color:var(--bordeaux-pale)}
+.divider::before,.divider::after{content:"";height:1px;width:64px;background:linear-gradient(90deg,transparent,var(--bordeaux-pale))}
+.divider::after{background:linear-gradient(90deg,var(--bordeaux-pale),transparent)}
+.divider .star{font-size:13px}
+.divider.cream{color:rgba(251,236,220,.7)}
+.divider.cream::before{background:linear-gradient(90deg,transparent,rgba(251,236,220,.6))}
+.divider.cream::after{background:linear-gradient(90deg,rgba(251,236,220,.6),transparent)}
+
+/* ---- buttons: refined editorial, not pills ---- */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sc);font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;font-size:12px;padding:15px 30px;border-radius:1px;
+  transition:background .3s,color .3s,border-color .3s,transform .3s;cursor:pointer;white-space:nowrap}
+.btn .ar{font-family:var(--body);letter-spacing:0;font-size:16px;transition:transform .3s}
+.btn:hover .ar{transform:translateX(5px)}
+.btn-solid{background:var(--bordeaux);color:var(--cream);border:1px solid var(--bordeaux)}
+.btn-solid:hover{background:var(--bordeaux-l);border-color:var(--bordeaux-l);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--bordeaux);border:1px solid var(--bordeaux)}
+.btn-line:hover{background:var(--bordeaux);color:var(--cream)}
+.btn-line-cream{background:transparent;color:var(--cream);border:1px solid rgba(251,236,220,.5)}
+.btn-line-cream:hover{background:var(--cream);color:var(--bordeaux);border-color:var(--cream)}
+.btn-solid-cream{background:var(--cream);color:var(--bordeaux);border:1px solid var(--cream)}
+.btn-solid-cream:hover{background:#fff;transform:translateY(-1px)}
+
+/* ---- shared layout ---- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px}
+.wrap-narrow{max-width:780px;margin:0 auto;padding:0 32px}
+@media(max-width:680px){.wrap{padding:0 26px}}
+
+/* ---- mobile menu (shared) ---- */
+.m-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:none;background:none;cursor:pointer;padding:0;z-index:120}
+.m-toggle span{display:block;height:2px;width:24px;background:#000;border-radius:2px;transition:transform .3s ease,opacity .2s ease;margin:0 auto}
+.m-toggle.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.m-toggle.on span:nth-child(2){opacity:0}
+.m-toggle.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.m-overlay{position:fixed;inset:0;z-index:110;background:var(--bordeaux);color:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .35s ease,transform .35s ease,visibility .35s}
+.m-overlay.open{opacity:1;visibility:visible;transform:none}
+.m-overlay a{font-family:var(--display);font-weight:700;font-size:clamp(34px,9vw,52px);color:var(--cream);line-height:1.3;letter-spacing:-.01em}
+.m-overlay a.m-cta{font-family:var(--sc);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;border:1px solid rgba(251,236,220,.5);padding:14px 30px;margin-top:22px}
+.m-overlay .m-orn{color:rgba(251,236,220,.6);font-size:15px;margin-bottom:14px;letter-spacing:.3em}
+body.m-lock{overflow:hidden}
+@media(max-width:780px){.m-toggle{display:flex}}
+
+/* ---- footer social icons ---- */
+.foot-social{display:flex;gap:12px;margin-top:24px}
+.foot-social a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(251,236,220,.3);border-radius:50%;color:rgba(251,236,220,.85);transition:background .3s,color .3s,border-color .3s,transform .3s}
+.foot-social a:hover{background:var(--bordeaux);color:var(--cream);border-color:var(--bordeaux);transform:translateY(-2px)}
+.foot-social svg{width:19px;height:19px;fill:currentColor;display:block}
+
+/* ---- shared newsletter band (Flodesk) ---- */
+.vip{background:var(--wine);color:var(--cream);padding:90px 0;position:relative;overflow:hidden}
+.vip .flower{position:absolute;width:300px;opacity:.12;right:-50px;bottom:-60px;pointer-events:none}
+.vip>.wrap{max-width:720px;text-align:center;position:relative;z-index:2}
+.vip .eyebrow{color:rgba(251,236,220,.66);display:block;margin-bottom:22px}
+.vip .fd-embed{position:relative;z-index:2}
